@@ -29,30 +29,6 @@ component extends="coldbox.system.logging.AbstractAppender" output="false" hint=
 				{
 				extraInfo.url	= url;
 				}	
-			if(isDefined("client.schoolName"))
-				{
-				extraInfo._school.name = client.schoolName;
-				}
-			if(isDefined("client.partitionId"))
-				{
-				extraInfo._school.partitionId = client.partitionId;
-				}
-			if(isDefined("client.locale"))
-				{
-				extraInfo._school.locale = client.locale;
-				}
-			if(isDefined("client.username"))
-				{
-				extraInfo._user.username = client.username;
-				}
-			if(isDefined("client.ss.personId"))
-				{
-				extraInfo._user.personId = client.ss.personId;
-				}
-			if(isDefined("client.ss.userAccountId"))
-				{
-				extraInfo._user.userAccountId = client.ss.userAccountId;
-				}
 			if(NOT isDefined("arguments.exception.transactionId"))
 				{
 				arguments.exception.transactionId = createGuid();
