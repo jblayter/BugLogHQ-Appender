@@ -31,8 +31,13 @@ component extends="coldbox.system.logging.AbstractAppender" output="false" hint=
 				}	
 			if(NOT isDefined("arguments.exception.transactionId"))
 				{
-				arguments.exception.transactionId = createGuid();
-				transactionId = arguments.exception.transactionId;
+					if(findNocase(server.coldfusion.productname,'lucee')){
+						arguments.exception.transactionId = createGuid();
+					}
+					else{
+						arguments.exception.transactionId = createUuid();
+					}
+					transactionId = arguments.exception.transactionId;
 				}
 			else
 				{
